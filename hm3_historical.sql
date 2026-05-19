@@ -11,6 +11,7 @@ WITH all_data AS (
   FROM sshomework3.ab_historical
 )
 SELECT users_registered
+  , TRUNC(users_registered / total_days_registered) AS users_per_day_registered
   , users_reminded
   , ROUND(users_reminded / users_registered * 100.0, 2) AS cr_to_reminder_pct
   , users_paid_after_reminder
